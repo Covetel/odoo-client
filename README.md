@@ -2,15 +2,15 @@
 
 ### SYNOPSIS
 
-```javascript
+```js
 var openerp = require('./lib/openerp.js');
 
 var opts = {
-login: 'admin',
-password: '123321...',
-db: 'cooperativa-test',
-host: 'localhost',
-port: '8069'
+    login: 'admin',
+    password: '123321...',
+    db: 'cooperativa-test',
+    host: 'localhost',
+    port: '8069'
 }
 
 // create the client
@@ -25,6 +25,6 @@ client.database_getlist(callback);
 // get model
 
 function callback (err,response){
-console.dir(response);
+    console.dir(response);
 }
 ```
