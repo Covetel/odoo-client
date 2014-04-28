@@ -31,6 +31,28 @@ function on_auth (err,response,sid){
 	client.sid = sid;
 
 	// Get model struct
-	client.get_model('res.partner',callback);
+	//client.get_model('res.partner',callback);
+
+	// Create record
+	var args = [
+	    {
+		"journal_id" : 6,
+		"credit" : 0,
+		"ref" : false,
+		"date" : "2014-04-28",
+		"move_id" : false,
+		"name" : "nombre",
+		"period_id" : 5,
+		"account_id" : 5,
+		"debit" : 100,
+		"statement_id" : false,
+		"partner_id" : false,
+		"date_maturity" : false,
+		"account_tax_id" : false,
+		"analytic_account_id" : false
+	     }
+	];
+	
+	client._create('account.move.line', args, undefined, undefined, callback);
     }
 }
