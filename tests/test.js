@@ -12,14 +12,25 @@ var opts = {
 var client = new openerp(opts);
 
 // auth
-client.auth(callback);
+client.auth(on_auth);
 
 // show databases
-client.database_getlist(callback);
-
-// get model
+//client.database_getlist(callback);
 
 function callback (err,response){
-    console.dir(response);
+    console.dir(response.result);
 }
 
+function on_auth (err,response,sid){
+    if (err) throw err;
+
+    if (response.result.uid){
+	//save session
+	client.session_id = response.result.session_id;
+	client.context = response.result.user_context;
+	client.sid = sid;
+
+	// Get model struct
+	client.get_model('res.partner',callback);
+    }
+}
