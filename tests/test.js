@@ -1,4 +1,4 @@
-var openerp = require('../lib/openerp.js');
+var odoo = require('../lib/odoo.js');
 
 var opts = {
     login: 'admin',
@@ -9,7 +9,7 @@ var opts = {
 }
 
 // create the client
-var client = new openerp(opts);
+var client = new odoo(opts);
 
 // auth
 client.auth(on_auth);
