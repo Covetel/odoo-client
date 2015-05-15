@@ -1,5 +1,7 @@
 ## odoo JSON-RPC Client for NodeJS
 
+[![Join the chat at https://gitter.im/Covetel/odoo-client](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Covetel/odoo-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### SYNOPSIS
 
 ```js
